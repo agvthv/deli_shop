@@ -1,5 +1,5 @@
 package com.pluralsight.models;
 
-public class Chips
+public class Chips extends Product
 {
 }

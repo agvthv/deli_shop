@@ -10,9 +10,11 @@ public class HomeScreen
 
     public static void opening()
     {
-        System.out.println(Colors.DARK_GREEN + "● ".repeat(18) + Colors.RESET);
-        System.out.println(Colors.GREEN + "Welcome to Jung 'n' Juicy Deli Shop" + Colors.RESET);
-        System.out.println(Colors.DARK_GREEN + "● ".repeat(18) + Colors.RESET);
+        System.out.println(Colors.DARK_GREEN + "● ".repeat(19) + Colors.RESET);
+        System.out.println(Colors.DARK_GREEN + "●"+ " ".repeat(35) + Colors.DARK_GREEN + "● " + Colors.RESET);
+        System.out.println(Colors.GREEN + "●  Welcome to Jung 'n' Juicy Deli   ● " + Colors.RESET);
+        System.out.println(Colors.DARK_GREEN + "●"+ " ".repeat(35)+Colors.DARK_GREEN + "● " + Colors.RESET);
+        System.out.println(Colors.DARK_GREEN + "● ".repeat(19) + Colors.RESET);
 
         System.out.println(Colors.WHITE + "How would you like to proceed?\n\n" + Colors.RESET +
                 Colors.WHITE + " 1) New Order\n" + Colors.RESET +

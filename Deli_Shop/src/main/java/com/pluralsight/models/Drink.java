@@ -1,5 +1,5 @@
 package com.pluralsight.models;
 
-public class Drink
+public class Drink extends Product
 {
 }
