@@ -2,86 +2,80 @@ package com.pluralsight.models;
 
 import java.util.List;
 
-public class Sandwich extends Product
-{
+public class Sandwich extends Product {
+    private String size;
+    private String bread;
+    private List<String> meats;
+    private List<String> cheeses;
+    private List<String> regularToppings;
+    private List<String> sauces;
+    private boolean toasted;
+    private boolean extraMeat;
+    private boolean extraCheese;
 
-    private String size; // e.g., 4 inch, 8 inch, 12 inch
-    private String breadType; // e.g., White, Wheat, Rye, Wrap
-    private List<Toppings> toppings; // List of toppings
-
-    public Sandwich(String name, String size, String breadType, List<Toppings> toppings)
-    {
-        super();
+    public Sandwich(String size, String bread, List<String> meats, List<String> cheeses,
+                    List<String> regularToppings, List<String> sauces, boolean toasted,
+                    boolean extraMeat, boolean extraCheese) {
+        super("Sandwich");
         this.size = size;
-        this.breadType = breadType;
-        this.toppings = toppings;
-    }
-
-    public String getSize()
-    {
-        return size;
-    }
-
-    public void setSize(String size)
-    {
-        this.size = size;
-        setPrice(calculatePrice(size, toppings)); // Recalculate price when size changes
-    }
-
-    public String getBreadType()
-    {
-        return breadType;
-    }
-
-    public void setBreadType(String breadType)
-    {
-        this.breadType = breadType;
-    }
-
-    public List<Toppings> getToppings()
-    {
-        return toppings;
-    }
-
-    public void setToppings(List<Toppings> toppings)
-    {
-        this.toppings = toppings;
-        setPrice(calculatePrice(size, toppings));
+        this.bread = bread;
+        this.meats = meats;
+        this.cheeses = cheeses;
+        this.regularToppings = regularToppings;
+        this.sauces = sauces;
+        this.toasted = toasted;
+        this.extraMeat = extraMeat;
+        this.extraCheese = extraCheese;
     }
 
     @Override
-    public String getProductType()
-    {
-        return "Sandwich";
-    }
+    public double getPrice() {
+        double price = 0;
+        int meatCount = meats.size();
+        int cheeseCount = cheeses.size();
 
-    @Override
-    public String toString()
-    {
-        return super.toString() + ", size='" + size + "', breadType='" + breadType + "', toppings=" + toppings;
-    }
-
-    private static double calculatePrice(String size, List<Toppings> toppings)
-    {
-        double basePrice;
         switch (size) {
-            case "4 inch":
-                basePrice = 5.50;
+            case "4\"":
+                price += 5.50;
+                if (meatCount > 0) {
+                    price += 1.00 + (meatCount - 1) * 0.50;
+                }
+                if (cheeseCount > 0) {
+                    price += 0.75 + (cheeseCount - 1) * 0.30;
+                }
+                if (extraMeat) price += 0.50;
+                if (extraCheese) price += 0.30;
                 break;
-            case "8 inch":
-                basePrice = 7.00;
+            case "8\"":
+                price += 7.00;
+                if (meatCount > 0) {
+                    price += 2.00 + (meatCount - 1) * 1.00;
+                }
+                if (cheeseCount > 0) {
+                    price += 1.50 + (cheeseCount - 1) * 0.60;
+                }
+                if (extraMeat) price += 1.00;
+                if (extraCheese) price += 0.60;
                 break;
-            case "12 inch":
-                basePrice = 8.50;
+            case "12\"":
+                price += 8.50;
+                if (meatCount > 0) {
+                    price += 3.00 + (meatCount - 1) * 1.50;
+                }
+                if (cheeseCount > 0) {
+                    price += 2.25 + (cheeseCount - 1) * 0.90;
+                }
+                if (extraMeat) price += 1.50;
+                if (extraCheese) price += 0.90;
                 break;
-            default:
-                throw new IllegalArgumentException("Invalid sandwich size");
         }
-        double toppingsPrice = toppings.stream().mapToDouble(t -> t.getPrice(size)).sum();
-        return basePrice + toppingsPrice;
+        return price;
     }
 
-
+    @Override
+    public String toString() {
+        return size + " " + super.getName() + " on " + bread + (toasted ? " (toasted)" : "") + " with " + String.join(", ", meats)+ (extraMeat ? " (extra meat)" : "") + ", "
+                + String.join(", ", cheeses)+ (extraCheese ? " (extra cheese)" : "") + ", " + String.join(", ", regularToppings)
+                + ", " + String.join(", ", sauces);
+    }
 }
-
-

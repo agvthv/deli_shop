@@ -6,7 +6,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+        HomeScreen app = new HomeScreen();
         HomeScreen.opening();
-        OrderScreen.order();
     }
 }
