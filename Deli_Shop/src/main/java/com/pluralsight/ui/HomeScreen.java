@@ -5,6 +5,8 @@ import com.pluralsight.application.OrderScreen;
 import com.pluralsight.models.Chips;
 import com.pluralsight.models.Drink;
 import com.pluralsight.models.Sandwich;
+
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -85,20 +87,20 @@ public class HomeScreen {
         String bread = userInput.nextLine();
         System.out.println();
         System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
-        System.out.println("Select size: 4\", 8\", 12\"");
+        System.out.println(Colors.WHITE + "Select size: 4\", 8\", 12\"" + Colors.RESET);
         String size = userInput.nextLine();
         System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
         System.out.println();
 
         List<String> meats = new ArrayList<>();
         boolean extraMeat = false;
-        System.out.println("Select meats: steak, ham, salami, roast beef, chicken, bacon");
+        System.out.println(Colors.WHITE + "Select meats: steak, ham, salami, roast beef, chicken, bacon" + Colors.RESET);
         System.out.println((Colors.RED +"Type 'done' to finish: " + Colors.RESET));
         while (true) {
             String meat = userInput.nextLine();
             if (meat.equalsIgnoreCase("done")) break;
             meats.add(meat);
-            System.out.println("Would you like extra meat for " + meat + "? (yes/no)");
+            System.out.println(Colors.WHITE + "Would you like extra meat for " + meat + "? (yes/no)" + Colors.RESET);
             if (userInput.nextLine().equalsIgnoreCase("yes")) {
                 extraMeat = true;
             }
@@ -114,7 +116,7 @@ public class HomeScreen {
             String cheese = userInput.nextLine();
             if (cheese.equalsIgnoreCase("done")) break;
             cheeses.add(cheese);
-            System.out.println("Would you like extra cheese for " + cheese + "? (yes/no)");
+            System.out.println(Colors.WHITE +"Would you like extra cheese for " + cheese + "? (yes/no)" + Colors.RESET);
             if (userInput.nextLine().equalsIgnoreCase("yes")) {
                 extraCheese = true;
             }

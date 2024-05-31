@@ -1,6 +1,7 @@
 package com.pluralsight.application;
 
 import com.pluralsight.models.Product;
+import com.pluralsight.ui.Colors;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -18,11 +19,11 @@ public class Receipts {
 
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
         try (FileWriter writer = new FileWriter(directoryPath + "/" + timestamp + ".txt")) {
-            writer.write("Recent Order Details:\n");
+            writer.write("Recent Order Details:\n\n");
             for (Product product : order.getProducts()) {
                 writer.write(product.toString() + "\n");
             }
-            writer.write("Total: $" + order.calculateTotal());
+            writer.write( "Total: $" + order.calculateTotal());
         } catch (IOException e) {
             e.printStackTrace();
         }

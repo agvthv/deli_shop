@@ -1,6 +1,7 @@
 package com.pluralsight.application;
 
 import com.pluralsight.models.Product;
+import com.pluralsight.ui.Colors;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,11 +26,12 @@ public class OrderScreen {
     }
 
     public void printOrder() {
-        System.out.println("Order Details:");
+        System.out.println(Colors.WHITE +"Order Details:" + Colors.RESET);
         for (Product product : products) {
             System.out.println(product);
         }
-        System.out.println("Total: $" + calculateTotal());
+        System.out.println(Colors.TRUE_GREEN +"-".repeat(19)+Colors.RESET);
+        System.out.println(Colors.WHITE + "Total: $" + calculateTotal() + Colors.RESET);
     }
 
     public List<Product> getProducts() {

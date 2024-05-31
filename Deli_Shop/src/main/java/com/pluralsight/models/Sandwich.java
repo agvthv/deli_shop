@@ -1,5 +1,8 @@
 package com.pluralsight.models;
 
+import com.pluralsight.ui.Colors;
+
+import java.awt.*;
 import java.util.List;
 
 public class Sandwich extends Product {
@@ -74,8 +77,10 @@ public class Sandwich extends Product {
 
     @Override
     public String toString() {
-        return size + " " + super.getName() + " on " + bread + (toasted ? " (toasted)" : "") + " with " + String.join(", ", meats)+ (extraMeat ? " (extra meat)" : "") + ", "
-                + String.join(", ", cheeses)+ (extraCheese ? " (extra cheese)" : "") + ", " + String.join(", ", regularToppings)
-                + ", " + String.join(", ", sauces);
+        return size + " " + super.getName() + " on " + bread + (toasted ? " (toasted)" : "") +
+                " \n + " + String.join(", ", meats)+ (extraMeat ? " (extra meat)" : "") + "\n + "
+
+                + String.join(", ", cheeses)+ (extraCheese ? " (extra cheese)" : "") + "\n + " + String.join(", ", regularToppings)
+                + "\n + " + String.join(", ", sauces);
     }
 }

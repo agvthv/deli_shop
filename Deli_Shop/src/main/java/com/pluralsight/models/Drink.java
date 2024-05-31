@@ -1,5 +1,6 @@
 package com.pluralsight.models;
 import com.pluralsight.models.Product;
+import com.pluralsight.ui.Colors;
 
 public class Drink extends Product {
     private String size;
@@ -24,6 +25,6 @@ public class Drink extends Product {
 
     @Override
     public String toString() {
-        return size + " " + super.getName();
+        return size + " " + super.getName() ;
     }
 }
