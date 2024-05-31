@@ -5,6 +5,7 @@ import com.pluralsight.application.OrderScreen;
 import com.pluralsight.models.Chips;
 import com.pluralsight.models.Drink;
 import com.pluralsight.models.Sandwich;
+import com.pluralsight.models.Sides;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -55,7 +56,7 @@ public class HomeScreen {
 
     public static void order() {
         System.out.println(Colors.WHITE + "What would you like to do: \n" + Colors.RESET);
-        System.out.println(Colors.WHITE + "1) Add Sandwich\n2) Add Drink\n3) Add Chips\n4) Checkout\n0) Cancel Order\n" + Colors.RESET);
+        System.out.println(Colors.WHITE + "1) Add Sandwich\n2) Add Drink\n3) Add Chips\n4) Add Sides\n5) Checkout\n0) Cancel Order\n" + Colors.RESET);
         System.out.print(Colors.WHITE + "Please enter your choice here: " + Colors.RESET);
         int choice = Integer.parseInt(userInput.nextLine());
         System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
@@ -70,6 +71,9 @@ public class HomeScreen {
                 addChips();
                 break;
             case 4:
+                addSides();
+                break;
+            case 5:
                 new Checkout(currentOrder);
                 break;
             case 0:
@@ -176,5 +180,15 @@ public class HomeScreen {
         Chips chips = new Chips(type);
         currentOrder.addProduct(chips);
         order();
+    }
+    private static void addSides() {
+        System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
+        System.out.println();
+        System.out.println(Colors.GREEN + "Pick a side: Au Jus, Sauce, none " + Colors.RESET);
+        String size = userInput.nextLine();
+        Sides sides = new Sides(size);
+        currentOrder.addProduct(sides);
+        order();
+
     }
 }
