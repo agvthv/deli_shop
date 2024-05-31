@@ -1,7 +1,6 @@
 package com.pluralsight.application;
 
 import com.pluralsight.models.Product;
-import com.pluralsight.ui.Colors;
 
 import java.io.File;
 import java.io.FileWriter;
