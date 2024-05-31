@@ -35,7 +35,7 @@ public class Sandwich extends Product {
         int cheeseCount = cheeses.size();
 
         switch (size) {
-            case "4\"":
+            case "4":
                 price += 5.50;
                 if (meatCount > 0) {
                     price += 1.00 + (meatCount - 1) * 0.50;
@@ -46,7 +46,7 @@ public class Sandwich extends Product {
                 if (extraMeat) price += 0.50;
                 if (extraCheese) price += 0.30;
                 break;
-            case "8\"":
+            case "8":
                 price += 7.00;
                 if (meatCount > 0) {
                     price += 2.00 + (meatCount - 1) * 1.00;
@@ -57,7 +57,7 @@ public class Sandwich extends Product {
                 if (extraMeat) price += 1.00;
                 if (extraCheese) price += 0.60;
                 break;
-            case "12\"":
+            case "12":
                 price += 8.50;
                 if (meatCount > 0) {
                     price += 3.00 + (meatCount - 1) * 1.50;

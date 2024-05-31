@@ -3,7 +3,7 @@ import com.pluralsight.models.Product;
 
 public class Chips extends Product {
     public Chips(String type) {
-        super(type + " Chips");
+        super("Chips");
     }
 
     @Override

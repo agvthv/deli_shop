@@ -81,15 +81,19 @@ public class HomeScreen {
     }
 
     private static void addSandwich() {
-        System.out.println("Select bread: white, wheat, rye, wrap");
+        System.out.println(Colors. GREEN + "Select bread: white, wheat, rye, wrap" +Colors.RESET);
         String bread = userInput.nextLine();
+        System.out.println();
+        System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
         System.out.println("Select size: 4\", 8\", 12\"");
         String size = userInput.nextLine();
+        System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
+        System.out.println();
 
         List<String> meats = new ArrayList<>();
         boolean extraMeat = false;
-        System.out.println("Options: steak, ham, salami, roast beef, chicken, bacon");
-        System.out.println("Select meats (type 'done' to finish):");
+        System.out.println("Select meats: steak, ham, salami, roast beef, chicken, bacon");
+        System.out.println((Colors.RED +"Type 'done' to finish: " + Colors.RESET));
         while (true) {
             String meat = userInput.nextLine();
             if (meat.equalsIgnoreCase("done")) break;
@@ -102,8 +106,10 @@ public class HomeScreen {
 
         List<String> cheeses = new ArrayList<>();
         boolean extraCheese = false;
-        System.out.println("Options: american, provolone, cheddar, swiss");
-        System.out.println("Select cheeses (type 'done' to finish):");
+        System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
+        System.out.println();
+        System.out.println(Colors.GREEN + "Select cheeses : american, provolone, cheddar, swiss" + Colors.RESET);
+        System.out.println((Colors.RED +"Type 'done' to finish: " + Colors.RESET));
         while (true) {
             String cheese = userInput.nextLine();
             if (cheese.equalsIgnoreCase("done")) break;
@@ -115,8 +121,10 @@ public class HomeScreen {
         }
 
         List<String> regularToppings = new ArrayList<>();
-        System.out.println("Options: lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, pickles, guacamole, mushrooms");
-        System.out.println("Select regular toppings (type 'done' to finish):");
+        System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
+        System.out.println();
+        System.out.println(Colors.GREEN + "Select toppings: lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, pickles, guacamole, mushrooms" + Colors.RESET);
+        System.out.println((Colors.RED +"Type 'done' to finish: " + Colors.RESET));
         while (true) {
             String topping = userInput.nextLine();
             if (topping.equalsIgnoreCase("done")) break;
@@ -124,32 +132,44 @@ public class HomeScreen {
         }
 
         List<String> sauces = new ArrayList<>();
-        System.out.println("Options: mayo, mustard, ketchup, ranch, thousand islands, vinaigrette");
-        System.out.println("Select sauces (type 'done' to finish):");
+        System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
+        System.out.println();
+        System.out.println(Colors.GREEN + "Select sauces: mayo, mustard, ketchup, ranch, thousand islands, vinaigrette" + Colors.RESET);
+        System.out.println((Colors.RED +"Type 'done' to finish: " + Colors.RESET));
         while (true) {
             String sauce = userInput.nextLine();
             if (sauce.equalsIgnoreCase("done")) break;
             sauces.add(sauce);
-        }
 
-        System.out.println("Would you like the sandwich toasted? (yes/no)");
+
+        }
+        System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
+        System.out.println();
+        System.out.println(Colors.GREEN + "Would you like the sandwich toasted? (yes/no)" + Colors.RESET);
         boolean toasted = userInput.nextLine().equalsIgnoreCase("yes");
 
         Sandwich sandwich = new Sandwich(size, bread, meats, cheeses, regularToppings, sauces, toasted, extraMeat, extraCheese);
         currentOrder.addProduct(sandwich);
         order();
+
     }
 
     private static void addDrink() {
-        System.out.println("Select drink size: Small, Medium, Large");
+        System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
+        System.out.println();
+        System.out.println(Colors.GREEN + "Select drink size: Small, Medium, Large" + Colors.RESET);
         String size = userInput.nextLine();
         Drink drink = new Drink(size);
         currentOrder.addProduct(drink);
         order();
+
     }
 
-    private static void addChips() {
-        System.out.println("Select chip type:");
+    private static void addChips()
+    {
+        System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
+        System.out.println();
+        System.out.println(Colors.GREEN + "Would you like to add chips for $1.50?: " + Colors.RESET);
         String type = userInput.nextLine();
         Chips chips = new Chips(type);
         currentOrder.addProduct(chips);

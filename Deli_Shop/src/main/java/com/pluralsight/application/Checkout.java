@@ -25,7 +25,7 @@ public class Checkout {
     }
 
     private void saveOrder(String customerName) {
-
+        Receipts.saveOrder(currentOrder);
         System.out.println("Order has been saved for " + customerName + ". Thank you!");
     }
 }
