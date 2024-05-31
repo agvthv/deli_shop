@@ -18,8 +18,6 @@ public class Sides extends Product
                 return 0;
             case "Sauce":
                 return 0;
-            case "none":
-                return 0;
         }
         return 0;
     }

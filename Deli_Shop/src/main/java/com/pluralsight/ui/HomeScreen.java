@@ -163,7 +163,7 @@ public class HomeScreen {
     private static void addDrink() {
         System.out.println(Colors.GREEN + "-".repeat(30) + Colors.RESET);
         System.out.println();
-        System.out.println(Colors.GREEN + "Select drink size: Small, Medium, Large" + Colors.RESET);
+        System.out.println(Colors.GREEN + "Select coke size: Small, Medium, Large" + Colors.RESET);
         String size = userInput.nextLine();
         Drink drink = new Drink(size);
         currentOrder.addProduct(drink);

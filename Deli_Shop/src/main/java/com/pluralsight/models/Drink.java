@@ -6,7 +6,7 @@ public class Drink extends Product {
     private String size;
 
     public Drink(String size) {
-        super("Drink");
+        super("Coke");
         this.size = size;
     }
 

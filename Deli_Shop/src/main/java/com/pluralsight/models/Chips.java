@@ -4,7 +4,7 @@ import com.pluralsight.ui.Colors;
 
 public class Chips extends Product {
     public Chips(String type) {
-        super("Chips");
+        super("Lays");
     }
 
     @Override
